@@ -1,0 +1,32 @@
+<div class="wrap">
+    <div class="container">
+        <!-- HEADER -->
+        <div class="row mt-20">
+            <div class="col-4">
+                <img src="{{avatar}}" class="avatar rounded mx-auto d-block" alt="avatar">
+            </div>
+            <div class="col-8">
+                <h2>David Rodriguez</h2>
+                <div class="example-button-container">
+                    <button mat-raised-button color="primary" (click)="openDialogCreatePost()">
+                        <mat-icon>add_photo_alternate</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHOTOS -->
+        <div class="row mt-20">
+
+            <div class="col-4 mt-20" *ngFor="let post of posts" (click)="openDialogPostExpanded(post)">
+                <mat-card>
+                    <img mat-card-image src="{{post.preview}}" alt="{{post.title}}">
+                    <mat-card-content>
+                        <h2>{{post.title}}</h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "keep-my-360": {
+      "hosting": {
+        "keepmy360": [
+          "keep-my-360"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "keep-my-360"
+  }
+}

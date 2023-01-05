@@ -1,0 +1,60 @@
+<div>
+    <form [formGroup]="formPost" (ngSubmit)="uploadPost($event)" >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Titulo</mat-label>
+                        <input matInput formControlName='title' placeholder="Titulo" value="">
+                      </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Descripcion</mat-label>
+                      <input matInput formControlName='description' placeholder="Descripcion" value="">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <!-- FILE -->
+                    <div class="file">
+                        <input type="file" (change)="uploadFile($event)" />
+                    </div>
+                    <mat-progress-bar mode="determinate" value="{{ uploadPercentFile | async }}"></mat-progress-bar>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!-- PREVIEW -->
+                    <div class="file">
+                        <input type="file" (change)="uploadPreview($event)" />
+                    </div>
+                    <mat-progress-bar mode="determinate" value="{{ uploadPercentPreview | async }}"></mat-progress-bar>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <!-- BUTTON -->
+                    <div class="example-button-container">
+                        <button mat-raised-button type="submit" color="primary" [disabled]="!formPost.valid">
+                            Subir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </form>
+
+
+</div>
